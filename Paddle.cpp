@@ -15,6 +15,7 @@ void Paddle::updateposition() {
 
 //    QRect fictivePaddle = itsPaddle;
 //    fictivePaddle.translate(itsSpeedX,0);
+//    if
     itsPaddle.translate(itsSpeedX,0);
 
 }

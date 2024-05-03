@@ -13,12 +13,26 @@
 #include <QPainter>
 #include <QKeyEvent>
 #include <QTimer>
+#include "game.h"
 
 using namespace std;
 
 
 class gui : public QWidget {
     Q_OBJECT
+private:
+    game * itsGame;
+    QTimer * itsTimer;
+public:
+    gui(game * aGame,QWidget * parent = nullptr);
+    ~gui();
+protected:
+    void paintEvent(QPaintEvent * event) override;
+    void keyPressEvent(QKeyEvent * event) override;
+    void keyReleaseEvent(QKeyEvent * event) override;
+private:
+    void drawAvatar(QPainter * aPainter);
+    void drawObstacles(QPainter * aPainter);
 };
 
 

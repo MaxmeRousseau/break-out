@@ -7,22 +7,32 @@
 
 #include "game.h"
 
-game::game(QObject *parent) : QObject(parent) {
+game::game(QObject *parent) : QObject{parent}
+{
+    itsLevelHeight = 500;
+    itsLevelWidth = 500;
 
+    itsPaddle = new Paddle(230,440,40,20); //230+20 = 250
+
+    // Set up the game loop timer
+    itsTimer = new QTimer(this);
+    connect(itsTimer, SIGNAL(timeout()), this, SLOT(gameLoop()));
+    itsTimer->start(10); // Start the game loop with a 10 ms interval
 }
 
 game::~game() {
-
+    delete itsTimer; // Clean up the timer
+    delete itsPaddle; // Clean up the paddle
 }
 
 int game::getItsLevelWitdh() const {
-    return 0;
+    return itsLevelWidth;
 }
 
 Paddle *game::getItsPaddle() {
-    return nullptr;
+    return itsPaddle;
 }
 
 void game::gameLoop() {
-
+    itsPaddle->updateposition();
 }

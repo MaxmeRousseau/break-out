@@ -24,8 +24,8 @@ private:
 public:
     Paddle(int pX,int pY, int pWidth,int pHeight);
     void updateposition();
-    void moveRight();
-    void moveLeft();
+    void moveRight(bool enable);
+    void moveLeft(bool enable);
     QRect getRect();
 };
 

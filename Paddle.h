@@ -26,7 +26,7 @@ public:
     void updateposition();
     void moveRight();
     void moveLeft();
-    QRect getRecht();
+    QRect getRect();
 };
 
 

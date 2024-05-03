@@ -31,7 +31,7 @@ protected:
     void keyPressEvent(QKeyEvent * event) override;
     void keyReleaseEvent(QKeyEvent * event) override;
 private:
-    void drawAvatar(QPainter * aPainter);
+    void drawPaddle(QPainter * aPainter);
     void drawObstacles(QPainter * aPainter);
 };
 

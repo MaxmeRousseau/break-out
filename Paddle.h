@@ -19,6 +19,14 @@ class Paddle {
 private:
     QRect itsPaddle;
     int itsSpeedX;
+    bool itsRight = false;
+    bool itsLeft = false;
+public:
+    Paddle(int pX,int pY, int pWidth,int pHeight);
+    void updateposition();
+    void moveRight();
+    void moveLeft();
+    QRect getRecht();
 };
 
 

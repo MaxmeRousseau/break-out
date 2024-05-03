@@ -11,7 +11,7 @@ ball::ball(int x, int y)
     the_ball_pos = QPoint(x, y);
 }
 
-void ball::isMoving()
+void ball::isTouching()
 {
     if(speedX> 0)
     {

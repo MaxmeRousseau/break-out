@@ -14,7 +14,7 @@ public:
     ball(int x, int y);
     void paintevent(QPaintEvent *event);
     void resize(QResizeEvent *event);
-    void isMoving();
+    void isTouching();
 
 private:
     int speedX;

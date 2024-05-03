@@ -8,15 +8,21 @@
 #include <QTime>
 #include <QPicture>
 
-class ball: public QWidget
+class ball
 {
 public:
-    ball(QWidget *parent = nullptr);
+    ball(int x, int y);
     void paintevent(QPaintEvent *event);
     void resize(QResizeEvent *event);
+    void isMoving();
+
 private:
+    int speedX;
+    int speedY;
+    int itswidth, itsheight;
     std::string ballpath = ":/new/ball/ball.png";
-    void drawball(QPainter *painter);
+    QPixmap the_ball;
+    QPoint the_ball_pos;
 
 };
 

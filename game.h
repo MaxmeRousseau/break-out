@@ -12,6 +12,7 @@
 #include <QObject>
 #include <QTimer>
 #include "Paddle.h"
+#include "ball.h"
 
 using namespace std;
 
@@ -22,6 +23,7 @@ private:
     int itsLevelWidth;
     int itsLevelHeight;
     Paddle * itsPaddle;
+    Ball * theball;
     QTimer * itsTimer;
 
 public:
@@ -29,6 +31,8 @@ public:
     ~game();
     int getItsLevelWitdh() const;
     Paddle * getItsPaddle();
+    Ball *getTheball() const;
+
 private slots:
     void gameLoop();
 };

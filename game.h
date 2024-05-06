@@ -13,6 +13,8 @@
 #include <QTimer>
 #include "Paddle.h"
 #include "ball.h"
+#include "brick.h"
+#include <vector>
 
 using namespace std;
 
@@ -27,13 +29,15 @@ private:
     Ball * theball;
     QTimer * itsTimer;
 
+
+
 public:
     game(QObject * parent = nullptr);
     ~game();
     int getItsLevelWitdh() const;
     Paddle * getItsPaddle();
     Ball *getTheball();
-
+    vector<brick *>itsBricks;
 private slots:
     void gameLoop();
 };

@@ -14,6 +14,7 @@
 #include <QKeyEvent>
 #include <QTimer>
 #include "game.h"
+#include "brick.h"
 
 using namespace std;
 
@@ -33,6 +34,7 @@ protected:
 private:
     void drawPaddle(QPainter * aPainter);
     void drawBall(QPainter * aPainter);
+    void drawBrick(QPainter *aPainter,int x,int y);
     void drawObstacles(QPainter * aPainter);
 };
 

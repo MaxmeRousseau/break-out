@@ -1,0 +1,26 @@
+#include "brick.h"
+
+brick::brick(int x, int y,int hp) {
+
+    itswidth = 60;
+    itsheight = 15;
+    aBrick = QPixmap(BrickP1path.c_str()).scaled(itswidth, itsheight);
+
+
+}
+
+int brick::getHp() const
+{
+    return hp;
+}
+
+QPixmap brick::getABrick() const
+{
+    return aBrick;
+}
+
+
+void brick::updateBrick()
+{
+    hp-=1;
+}

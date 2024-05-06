@@ -6,6 +6,7 @@
  */
 
 #include "Paddle.h"
+#include <QDebug>
 
 Paddle::Paddle(int pX, int pY, int pWidth, int pHeight)
     : itsPaddle(pX,pY,pWidth,pHeight){ }
@@ -13,11 +14,15 @@ Paddle::Paddle(int pX, int pY, int pWidth, int pHeight)
 void Paddle::updateposition() {
     itsSpeedX = itsRight - itsLeft;
 
-//    QRect fictivePaddle = itsPaddle;
-//    fictivePaddle.translate(itsSpeedX,0);
-//    if
-    itsPaddle.translate(itsSpeedX,0);
-
+    if (itsPaddle.x() < 460 && itsPaddle.x() > 0){
+        itsPaddle.translate(itsSpeedX*2,0);
+    }
+    if (itsPaddle.x() == 460 && itsSpeedX < 0){
+        itsPaddle.translate(itsSpeedX*2,0);
+    }
+    if (itsPaddle.x() == 0 && itsSpeedX > 0){
+        itsPaddle.translate(itsSpeedX*2,0);
+    }
 }
 
 void Paddle::moveRight(bool enable) {

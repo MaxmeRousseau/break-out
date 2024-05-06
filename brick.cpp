@@ -31,5 +31,5 @@ QPoint brick::getpoints()
 }
 
 void brick::setABrick() {
-    QPixmap(BrickP2path.c_str()).scaled(itswidth, itsheight);
+    aBrick = QPixmap(BrickP2path.c_str()).scaled(itswidth, itsheight);
 }

@@ -21,7 +21,6 @@ void Ball::isTouching()
     ||(paddleRect.x() > (the_ball_pos.x()+the_ball.width()))
     ||(the_ball_pos.y() > paddleRect.y()+paddleRect.height())
     ||(paddleRect.y() > the_ball_pos.y()+the_ball.height()))){
-        speedX = -speedX*1.2;
         speedY = -speedY;
     }
 
@@ -30,7 +29,6 @@ void Ball::isTouching()
               ||(brick->getpoints().x() > (the_ball_pos.x()+the_ball.width()))
               ||(the_ball_pos.y() > brick->getpoints().y()+brick->getABrick().height())
               ||(brick->getpoints().y() > the_ball_pos.y()+the_ball.height()))){
-            speedX = -speedX*1.2;
             speedY = -speedY;
             brick->updateBrick();
             if (brick->getHp() <=0){

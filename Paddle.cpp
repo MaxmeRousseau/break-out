@@ -15,13 +15,13 @@ void Paddle::updateposition() {
     itsSpeedX = itsRight - itsLeft;
 
     if (itsPaddle.x() < 460 && itsPaddle.x() > 0){
-        itsPaddle.translate(itsSpeedX*2,0);
+        itsPaddle.translate(itsSpeedX*3,0);
     }
-    if (itsPaddle.x() == 460 && itsSpeedX < 0){
-        itsPaddle.translate(itsSpeedX*2,0);
+    if (itsPaddle.x() >= 460 && itsSpeedX < 0){
+        itsPaddle.translate(itsSpeedX*3,0);
     }
-    if (itsPaddle.x() == 0 && itsSpeedX > 0){
-        itsPaddle.translate(itsSpeedX*2,0);
+    if (itsPaddle.x() <= 0 && itsSpeedX > 0){
+        itsPaddle.translate(itsSpeedX*3,0);
     }
 }
 

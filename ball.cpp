@@ -2,18 +2,31 @@
 
 
 
-Ball::Ball(int x, int y)
+Ball::Ball(int x, int y, game * game)
 
 {
     itswidth = 5;
     itsheight = 5;
     the_ball = QPixmap(ballpath.c_str()).scaled(itswidth, itsheight);
     the_ball_pos = QPoint(x, y);
+    itsGame = game;
 
 }
 
 void Ball::isTouching()
 {
+    QRect paddleRect  = itsGame->getItsPaddle()->getRect();
+
+    if (!(the_ball_pos.x()>(paddleRect.x()+paddleRect.width())
+    ||(paddleRect.x() > (the_ball_pos.x()+the_ball.width()))
+    ||(the_ball_pos.y() > paddleRect.y()+paddleRect.height())
+    ||(paddleRect.y() > the_ball_pos.y()+the_ball.height()))){
+        speedX = -speedX*1.2;
+        speedY = -speedY;
+    }
+
+
+
     if(speedX > 0)
     {
         if (the_ball_pos.x() > 495)
@@ -45,7 +58,6 @@ void Ball::isTouching()
         if (the_ball_pos.y() < 5)
         {
             speedY = -speedY*1.2;
-
         }
     }
     if (speedX > maxSpeed)

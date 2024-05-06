@@ -3,7 +3,7 @@
 
 
 #include <QResizeEvent>
-
+#include <vector>
 #include <QPainter>
 
 class brick
@@ -11,10 +11,9 @@ class brick
 public:
     brick(int x, int y,int hp);
     void updateBrick();
-
     int getHp() const;
-
     QPixmap getABrick() const;
+    QPoint getpoints();
 
 private:
     int hp;
@@ -22,6 +21,7 @@ private:
     int itsheight;
     std::string BrickP1path = ":/Brick/beigebrickP1.png";
     std::string BrickP2path = ":/Brick/beigebrickP2.png";
+    QPoint brickPos;
     QPixmap aBrick;
 
 

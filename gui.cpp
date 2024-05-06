@@ -13,6 +13,17 @@ gui::gui(game *aGame, QWidget *parent) : QWidget(parent),itsGame(aGame) {
     itsTimer = new QTimer(this);
     connect(itsTimer, SIGNAL(timeout()),this, SLOT(update()));
     itsTimer->start(16); //Frame rate here
+    // draw bricks
+
+
+    for(int i = 60;i < 500;i+= 70)
+    {
+        for(int j = 15;j< 100;j+=15)
+        {
+            itsGame->itsBricks.push_back(new brick(i,j,2));
+        }
+    }
+
 }
 
 gui::~gui() {
@@ -35,6 +46,8 @@ void gui::paintEvent(QPaintEvent *event) {
     drawPaddle(&painter);
 
     drawBall(&painter);
+
+    drawObstacles(&painter);
 
     update();
 
@@ -72,8 +85,7 @@ void gui::drawPaddle(QPainter *aPainter) {
 }
 
 void gui::drawObstacles(QPainter *aPainter) {
-    Q_UNIMPLEMENTED();
-    cout << "WiP" << endl;
+
 }
 
 void gui::drawBall(QPainter *aPainter) {
@@ -82,6 +94,14 @@ void gui::drawBall(QPainter *aPainter) {
 
     // Dessiner la balle à sa position actuelle
     aPainter->drawPixmap(ballPos, itsGame->getTheball()->getThe_ball());
+}
+
+void gui::drawBrick(QPainter *aPainter,int x,int y)
+{
+    brick * dummy = new brick(-500,-500,2);
+
+    aPainter->drawPixmap(*new QPoint(x,y),dummy->getABrick());
+
 }
 
 

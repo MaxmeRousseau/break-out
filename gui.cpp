@@ -24,7 +24,7 @@ void gui::paintEvent(QPaintEvent *event) {
 
     QPainter painter(this);
 
-    int positionX = itsGame->getItsPaddle()->getRect().center().x();
+//   int positionX = itsGame->getItsPaddle()->getRect().center().x();
 
 //    if (positionX > itsGame->getItsLevelWitdh() - width()/2)
 //    {

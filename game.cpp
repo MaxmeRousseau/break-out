@@ -12,8 +12,10 @@ game::game(QObject *parent) : QObject{parent}
     itsLevelHeight = 500;
     itsLevelWidth = 500;
 
-    itsPaddle = new Paddle(250,410,40,20); //230+20 = 250
+
+    itsPaddle = new Paddle(230,440,40,15); //230+20 = 250
     theball = new Ball(230,440);
+
 
     // Set up the game loop timer
     itsTimer = new QTimer(this);

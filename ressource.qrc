@@ -2,4 +2,8 @@
     <qresource prefix="/new/ball">
         <file>ball.png</file>
     </qresource>
+    <qresource prefix="/Brick">
+        <file>beigebrickP1.png</file>
+        <file>beigebrickP2.png</file>
+    </qresource>
 </RCC>

@@ -14,11 +14,9 @@ gui::gui(game *aGame, QWidget *parent) : QWidget(parent),itsGame(aGame) {
     connect(itsTimer, SIGNAL(timeout()),this, SLOT(update()));
     itsTimer->start(16); //Frame rate here
     // draw bricks
-
-
-    for(int i = 60;i < 500;i+= 70)
+    for(int i = 50;i < 450;i+= 70)
     {
-        for(int j = 15;j< 100;j+=15)
+        for(int j = 10;j< 100;j+=16)
         {
             itsGame->itsBricks.push_back(new brick(i,j,2));
         }
@@ -85,7 +83,9 @@ void gui::drawPaddle(QPainter *aPainter) {
 }
 
 void gui::drawObstacles(QPainter *aPainter) {
-
+    for (brick * brick : itsGame->itsBricks){
+        aPainter->drawPixmap(brick->getpoints(),brick->getABrick());
+    }
 }
 
 void gui::drawBall(QPainter *aPainter) {

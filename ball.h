@@ -8,6 +8,7 @@
 #include <QTime>
 #include <QPicture>
 #include "game.h"
+#include <algorithm>
 
 class game;
 

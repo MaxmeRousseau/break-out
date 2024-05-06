@@ -14,6 +14,7 @@
 #include <QKeyEvent>
 #include <QTimer>
 #include "game.h"
+#include "brick.h"
 
 using namespace std;
 

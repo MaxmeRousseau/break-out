@@ -25,6 +25,19 @@ void Ball::isTouching()
         speedY = -speedY;
     }
 
+    for (brick * brick : itsGame->itsBricks){
+        if (!(the_ball_pos.x()>(brick->getpoints().x()+brick->getABrick().width())
+              ||(brick->getpoints().x() > (the_ball_pos.x()+the_ball.width()))
+              ||(the_ball_pos.y() > brick->getpoints().y()+brick->getABrick().height())
+              ||(brick->getpoints().y() > the_ball_pos.y()+the_ball.height()))){
+            speedX = -speedX*1.2;
+            speedY = -speedY;
+            brick->updateBrick();
+            if (brick->getHp() <=0){
+                itsGame->itsBricks.erase(std::remove(itsGame->itsBricks.begin(),itsGame->itsBricks.end(),brick));
+            }
+        }
+    }
 
 
     if(speedX > 0)

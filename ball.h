@@ -28,12 +28,13 @@ public:
     QPixmap getThe_ball() const;
 
 private:
-    float speedX = 0;
+    float speedX = 1;
     float speedY = -2;
     int itswidth, itsheight;
     std::string ballpath = ":/new/ball/ball.png";
     QPixmap the_ball;
     QPoint the_ball_pos;
+    int maxSpeed = 3;
 
 
 

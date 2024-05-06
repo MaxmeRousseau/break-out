@@ -48,6 +48,10 @@ void Ball::isTouching()
 
         }
     }
+    if (speedX > maxSpeed)
+        speedX = maxSpeed;
+    if (speedY > maxSpeed)
+        speedY = maxSpeed;
 }
 
 int Ball::getSpeedX() const

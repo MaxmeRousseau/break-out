@@ -38,3 +38,7 @@ void game::gameLoop() {
     itsPaddle->updateposition();
     theball->updateball();
 }
+
+Ball* game::getTheball() {
+    return theball;
+}

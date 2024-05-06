@@ -16,32 +16,35 @@ void Ball::isTouching()
 {
     if(speedX > 0)
     {
-        if (the_ball_pos.x() < 495)
+        if (the_ball_pos.x() > 495)
         {
-            speedX = -speedX;
+            speedX = -speedX*1.2;
         }
 
     }
     if(speedX < 0)
     {
-        if (the_ball_pos.x() > 5)
+        if (the_ball_pos.x() < 5)
         {
-            speedX = -speedX;
-
-          }
-    }
-
-        if (the_ball_pos.y() < 495)
-        {
-            speedY = -speedY;
+            speedX = -speedX*1.2;
 
         }
+    }
 
-    if(speedY > 0)
+    if (speedY > 0)
     {
-        if (the_ball_pos.y() > 5)
+        if (the_ball_pos.y() > 495)
         {
-            speedY = -speedY;
+            speedY = -speedY*1.2;
+        }
+    }
+
+
+    if(speedY < 0)
+    {
+        if (the_ball_pos.y() < 5)
+        {
+            speedY = -speedY*1.2;
 
         }
     }

@@ -31,7 +31,7 @@ public:
     ~game();
     int getItsLevelWitdh() const;
     Paddle * getItsPaddle();
-    Ball *getTheball() const;
+    Ball *getTheball();
 
 private slots:
     void gameLoop();

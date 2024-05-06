@@ -41,11 +41,11 @@ void gui::paintEvent(QPaintEvent *event) {
 //    } else if(positionX> width()/2){
 //        painter.translate(-positionX + width()/2,0);
 //    }
+    drawObstacles(&painter);
     drawPaddle(&painter);
-
     drawBall(&painter);
 
-    drawObstacles(&painter);
+
 
     update();
 

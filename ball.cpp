@@ -31,6 +31,9 @@ void Ball::isTouching()
               ||(brick->getpoints().y() > the_ball_pos.y()+the_ball.height()))){
             speedY = -speedY;
             brick->updateBrick();
+            if (brick->getHp() == 1){
+                brick->setABrick();
+            }
             if (brick->getHp() <=0){
                 itsGame->itsBricks.erase(std::remove(itsGame->itsBricks.begin(),itsGame->itsBricks.end(),brick));
             }

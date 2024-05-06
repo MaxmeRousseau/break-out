@@ -29,3 +29,7 @@ QPoint brick::getpoints()
 {
     return brickPos;
 }
+
+void brick::setABrick() {
+    QPixmap(BrickP2path.c_str()).scaled(itswidth, itsheight);
+}

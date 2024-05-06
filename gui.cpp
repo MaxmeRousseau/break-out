@@ -34,6 +34,10 @@ void gui::paintEvent(QPaintEvent *event) {
 //    }
     drawPaddle(&painter);
 
+    drawBall(&painter);
+
+    update();
+
     //QWidget::paintEvent(event);
 }
 
@@ -70,6 +74,14 @@ void gui::drawPaddle(QPainter *aPainter) {
 void gui::drawObstacles(QPainter *aPainter) {
     Q_UNIMPLEMENTED();
     cout << "WiP" << endl;
+}
+
+void gui::drawBall(QPainter *aPainter) {
+
+    QPoint ballPos = itsGame->getTheball()->getThe_ball_pos();
+
+    // Dessiner la balle à sa position actuelle
+    aPainter->drawPixmap(ballPos, itsGame->getTheball()->getThe_ball());
 }
 
 

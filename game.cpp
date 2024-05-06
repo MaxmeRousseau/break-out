@@ -14,7 +14,7 @@ game::game(QObject *parent) : QObject{parent}
 
 
     itsPaddle = new Paddle(230,440,40,15); //230+20 = 250
-    theball = new Ball(230,440);
+    theball = new Ball(230,440, this);
 
 
     // Set up the game loop timer

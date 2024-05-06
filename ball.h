@@ -7,11 +7,14 @@
 #include <QTimer>
 #include <QTime>
 #include <QPicture>
+#include "game.h"
+
+class game;
 
 class Ball
 {
 public:
-    Ball(int x, int y);
+    Ball(int x, int y, game * itsGame);
     void paintEvent(QPaintEvent *event);
     void resize(QResizeEvent *event);
     void isTouching();
@@ -35,6 +38,7 @@ private:
     QPixmap the_ball;
     QPoint the_ball_pos;
     int maxSpeed = 3;
+    game * itsGame;
 
 
 

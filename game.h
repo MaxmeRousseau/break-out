@@ -16,6 +16,7 @@
 
 using namespace std;
 
+class Ball;
 
 class game : public QObject{
     Q_OBJECT

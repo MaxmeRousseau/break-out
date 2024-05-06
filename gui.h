@@ -32,6 +32,7 @@ protected:
     void keyReleaseEvent(QKeyEvent * event) override;
 private:
     void drawPaddle(QPainter * aPainter);
+    void drawBall(QPainter * aPainter);
     void drawObstacles(QPainter * aPainter);
 };
 
